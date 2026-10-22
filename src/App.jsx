@@ -34,9 +34,9 @@ export const App = () => {
             'is-light': sorted !== 'alphabetically',
           })}
           onClick={() => {
-            const sortedGoods = [...goodsFromServer].sort((a, b) =>
-              a.localeCompare(b),
-            );
+            const sortedGoods = [...goodsFromServer];
+
+            sortedGoods.sort((a, b) => a.localeCompare(b));
 
             setGoods(isReversed ? sortedGoods.reverse() : sortedGoods);
             setSorted('alphabetically');
